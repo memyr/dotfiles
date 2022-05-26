@@ -23,7 +23,7 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  > Find file", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>"),
 	dashboard.button("r", "  > Recent", "<cmd>lua require('telescope.builtin').oldfiles()<cr>"),
-	dashboard.button("s", "  > Settings", "<cmd>cd ~/.dotfiles/.config/nvim | e ~/.dotfiles/.config/nvim/init.lua<cr>"),
+	dashboard.button("s", "  > Settings", "<cmd>cd ~/.config/nvim | e $MYVIMRC<cr>"),
 	dashboard.button("q", "  > Quit NVIM", ":qa<cr>"),
 }
 
