@@ -1,37 +1,16 @@
 #+title: Literate Dotfiles for MacOS
 
-Clone this repository.
-
-#+begin_src sh
-git clone https://github.com/memyr/dotfiles
-#+end_src
-
-* Homebrew
+* Prerequisite
+Requires Homebrew and git:
 #+begin_src sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#+end_src
-
-* Git
-First, install git and the GitHub CLI.
-#+begin_src sh
 brew install git
-brew install gh
 #+end_src
 
-Run the authentication.
+* Clone
+Clone this repository
 #+begin_src sh
-gh auth login
-#+end_src
-
-Set the default username and email.
-#+begin_src sh
-git config --global user.name "memyr"
-git config --global user.email "example@examplemail.com"
-#+end_src
-
-Set the default branch name.
-#+begin_src sh
-git config --global init.defaultBranch main
+git clone https://github.com/memyr/dotfiles
 #+end_src
 
 * Dotfile management using stow
@@ -205,6 +184,7 @@ Neovide GUI for Neovim
 brew install --cask neovide
 #+end_src
 
+Run =:PackerSync= if something stops working initially.
 Make sure to run =:Copilot setup= to get access to GitHub Copilot suggestions.
 
 * Zotero
