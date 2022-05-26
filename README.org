@@ -1,0 +1,320 @@
+#+title: Literate Dotfiles for MacOS
+
+Clone this repository.
+
+#+begin_src sh
+git clone https://github.com/memyr/dotfiles
+#+end_src
+
+* Homebrew
+#+begin_src sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+
+* Git
+First, install git and the GitHub CLI.
+#+begin_src sh
+brew install git
+brew install gh
+#+end_src
+
+Run the authentication.
+#+begin_src sh
+gh auth login
+#+end_src
+
+Set the default username and email.
+#+begin_src sh
+git config --global user.name "memyr"
+git config --global user.email "example@examplemail.com"
+#+end_src
+
+Set the default branch name.
+#+begin_src sh
+git config --global init.defaultBranch main
+#+end_src
+
+* Dotfile management using stow
+First, install stow.
+#+begin_src sh
+brew install stow
+#+end_src
+
+Next, make sure that the necessary folders exist.
+This is because we don't want stow to symlink the entire config folder.
+#+begin_src sh
+mkdir ~/.matplotlib
+mkdir -p ~/.config/karabiner
+mkdir -p ~/.config/spicetify/Themes
+mkdir -p ~/.config/spicetify/Extensions
+#+end_src
+
+Stow will symlink all relevant folders/files to their target locations.
+#+begin_src sh
+stow dotfiles
+#+end_src
+
+* Command Line
+#+begin_src sh
+brew install lazygit
+brew install coreutils
+brew install wget
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+brew install romkatv/powerlevel10k/powerlevel10k
+brew install cmake
+brew install automake
+# linters
+brew install proselint
+brew install stylua
+brew install prettier
+# LSP
+brew install pyright
+# various tools
+brew install tree
+brew install ffmpeg
+brew install graphicsmagick
+brew install imagemagick
+npm install --global create-dmg
+# pandoc
+brew install pandoc
+brew install pandoc-crossref
+#+end_src
+
+* Fonts
+#+begin_src sh
+brew tap homebrew/cask-fonts
+# fira code retina for everything monospace:
+brew install --cask font-fira-code
+brew install --cask font-fira-code-nerd-font
+# Overpass for mixed pitch in Emacs:
+brew install --cask font-overpass
+# Dejavu for matplotlib integration
+brew install --cask font-dejavu
+# Computer modern for matplotlib
+brew install --cask font-computer-modern
+#+end_src
+
+* Casks
+#+begin_src sh
+brew install --cask kitty
+brew install --cask cyberduck
+brew install --cask raycast
+brew install --cask karabiner-elements
+brew install --cask bettertouchtool
+brew install --cask anaconda
+brew install --cask grammarly
+brew install --cask firefox
+brew install --cask appcleaner
+brew install --cask blender
+brew install --cask dozer
+brew install --cask dropbox
+brew install --cask fiji
+brew install --cask google-drive
+brew install --cask itsycal
+brew install --cask microsoft-office
+brew install --cask microsoft-teams
+brew install --cask microsoft-edge
+brew install --cask libreoffice
+brew install --cask parallels
+brew install --cask nordvpn
+brew install --cask spotify
+brew install --cask teamviewer
+brew install --cask vlc
+brew install --cask zoom
+brew install --cask skim
+brew install --cask visual-studio-code
+brew install --cask cheatsheet
+brew install --cask monitorcontrol
+brew install --cask keycastr
+brew install --cask github
+brew install --cask google-chrome
+
+# quicklook plugins
+brew install --cask qlcolorcode
+brew install --cask qlstephen
+brew install --cask qlmarkdown
+
+# LaTeX
+brew install --cask mactex
+brew install texlab
+
+# applications from the app store
+brew install mas
+mas install 1289583905 # Pixelmator pro
+mas install 1491071483 # Tot
+#+end_src
+
+* Python
+#+begin_src sh
+conda uninstall black
+pip install black
+pip install build
+pip install pipenv
+pip install matplotlib
+pip install plotly
+pip install chart-studio
+pip install pynvim
+pip install autopep8
+pip install pandas-stubs
+pip install data-science-types
+pip install matplotlib-label-lines
+pip install pandas
+pip install sklearn
+pip install xlrd
+pip install https://www.astro.rug.nl/software/kapteyn/kapteyn-3.0.tar.gz
+#+end_src
+
+* Emacs
+Use emacs-plus@29 with native comp.
+#+begin_src sh
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@29 --with-native-comp --with-nobu417-big-sur-icon
+#+end_src
+
+Install Doom prerequisites
+#+begin_src sh
+brew install fd
+brew install findutils
+brew install --HEAD ripgrep
+brew install aspell
+brew install graphviz
+brew install shellcheck
+#+end_src
+
+Install doom
+#+begin_src sh
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+#+end_src
+
+NOTE: may need to manually run ~make~ in file:~/.emacs.d/.local/straight/build-29.0.50/zmq in order for jupyter to work properly.
+#+begin_src sh
+cd ~/.emacs.d/.local/straight/build-29.0.50/zmq
+make
+#+end_src
+
+* Neovim
+Install head formula.
+#+begin_src sh
+brew install neovim --HEAD
+#+end_src
+
+Neovide GUI for Neovim
+#+begin_src sh
+brew install --cask neovide
+#+end_src
+
+Make sure to run =:Copilot setup= to get access to GitHub Copilot suggestions.
+
+* Zotero
+#+begin_src sh
+brew install --cask zotero
+#+end_src
+Install the zotero connector for the target browser at [[https://www.zotero.org/download/connectors]]
+
+Install the Better BibTeX add-on using these instructions [[https://retorque.re/zotero-better-bibtex/installation/]].
+To set up auto exporting the .bib file, right click on the library, click Export Library, select the BetterBibTeX format, and check the "Use Journal Abbreviations" and "Keep updated" checkbox.
+Save it to somewhere like =~/Zotero/library.bib=.
+Change the citekey format to =auth.lower + year=.
+
+For free pdf storage and file management, install the zotfile add-on at [[http://zotfile.com/]].
+In the settings (Tools>ZotFile Preferences), store the files in a custom cloud-based location and use subfolders defined by =/%a= (author).
+Also change the Linked Attachement Base Directory (Preferences > Advanced > Files and Folders) to this cloud location.
+All pdfs in this location should now be synced.
+
+Install zotero-night for a better dark mode look ([[https://github.com/ThomasFKJorna/zotero-night]]).
+Install zotero-scihub for Scihub integration ([[https://github.com/ethanwillis/zotero-scihub]]).
+
+* Spicetify
+This repo contains a custom solarized colorscheme for the Dribbblish theme in spicetify-cli.
+#+begin_src sh
+brew install khanhas/tap/spicetify-cli
+spicetify backup apply enable-devtool
+spicetify config extensions dribbblish.js
+spicetify config current_theme Dribbblish color_scheme solarized
+spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
+spicetify apply
+#+end_src
+
+* Custom color pallets
+This adds a solarized color pallet.
+#+begin_src sh
+mkdir ~/Library/Colors
+cp "./colors/Solarized.clr" "~/Library/Colors/"
+#+end_src
+
+* Yabai and skhd
+I am not using these tools right not, but may in the future.
+Skhd does not support key repeats very well, so I have switched to Karabiner for complex keybindings.
+
+* MacOS Settings
+#+begin_src sh
+# Close any open System Preferences panes
+osascript -e 'tell application "System Preferences" to quit'
+
+## KEYS
+# Faster key repeat (normal minimum is 15 (225 ms))
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+# Key repeat in all apps
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+## DOCK
+# Position the Dock on the right
+defaults write com.apple.dock "orientation" -string "right" && killall Dock
+# Autohide the Dock when the mouse is out
+defaults write com.apple.dock "autohide" -bool "true" && killall Dock
+# Faster dock hiding/showing
+defaults write com.apple.dock "autohide-time-modifier" -float "0.15" && killall Dock
+# Show dock immediately
+defaults write com.apple.dock "autohide-delay" -float "0" && killall Dock
+# Do not display recent apps in the Dock
+defaults write com.apple.dock "show-recents" -bool "false" && killall Dock
+
+## SCREENSHOTS
+# Remove the default shadow from screenshots
+defaults write com.apple.screencapture "disable-shadow" -bool "true" 
+
+## FINDER
+# Display the Finder "Quit" option
+defaults write com.apple.finder "QuitMenuItem" -bool "true" && killall Finder
+# Show all file extensions inside the Finder
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true" && killall Finder
+# Do not display the change file extension warning
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false" && killall Finder
+# Home directory is opened in the fileviewer dialog when saving a new document
+defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false"
+# Remove the delay when hovering the toolbar title
+defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0" && killall Finder
+# Show the path bar
+defaults write com.apple.finder ShowPathbar -bool true
+# Show the status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+# Always search current folder
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# Open home in new window
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "'file://$HOME/"
+# Use list as the preferred view style
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+## SPACES
+# Keep the Spaces arrangement
+defaults write com.apple.dock "mru-spaces" -bool "false" && killall Dock
+
+## MENUBAR
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"h:mm a\""
+
+## TEXTEDIT
+# Disable rich text
+defaults write com.apple.TextEdit "RichText" -bool "false" && killall TextEdit
+
+## SCROLL
+defaults write -g com.apple.swipescrolldirection -bool FALSE
+#+end_src
+

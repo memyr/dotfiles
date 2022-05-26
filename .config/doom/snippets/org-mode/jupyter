@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: jupyter
+# key: jupyter
+# uuid: jupyter
+# --
+#+begin_src jupyter-python
+$0
+#+end_src

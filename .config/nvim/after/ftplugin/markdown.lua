@@ -1,0 +1,8 @@
+vim.keymap.set("v", "<D-b>", "<Plug>VSurround*gv<Plug>VSurround*", { desc = "bold", buffer = true })
+vim.keymap.set("i", "<D-b>", "****<esc>hi", { desc = "bold", buffer = true })
+vim.keymap.set("v", "<D-i>", "<Plug>VSurround*", { desc = "italics", buffer = true })
+vim.keymap.set("i", "<D-i>", "**<esc>i", { desc = "italics", buffer = true })
+vim.keymap.set("v", "<D-`>", "<Plug>VSurround`", { desc = "code", buffer = true })
+vim.keymap.set("i", "<D-`>", "``<esc>i", { desc = "code", buffer = true })
+vim.keymap.set("v", "<D-->", "<Plug>VSurround~gv<Plug>VSurround~", { desc = "strikethrough", buffer = true })
+vim.keymap.set("i", "<D-`>", "~~~~<esc>hi", { desc = "strikethrough", buffer = true })

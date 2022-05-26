@@ -1,0 +1,7 @@
+\.git
+\.gitignore
+misc
+#LICENSE
+^/.*\.org
+.DS_Store
+colors
