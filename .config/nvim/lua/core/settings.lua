@@ -40,16 +40,16 @@ vim.opt.list = true -- show whitespace
 vim.opt.conceallevel = 2
 vim.opt.spell = true
 vim.opt.fillchars:append({
-	eob = " ",
-	fold = " ", -- no fold indicators
-	-- Thicker lines between windows (global statusline)
-	horiz = "━",
-	horizup = "┻",
-	horizdown = "┳",
-	vert = "┃",
-	vertleft = "┫",
-	vertright = "┣",
-	verthoriz = "╋",
+    eob = " ",
+    fold = " ", -- no fold indicators
+    -- Thicker lines between windows (global statusline)
+    horiz = "━",
+    horizup = "┻",
+    horizdown = "┳",
+    vert = "┃",
+    vertleft = "┫",
+    vertright = "┣",
+    verthoriz = "╋",
 })
 
 -----------------------------------------------------------

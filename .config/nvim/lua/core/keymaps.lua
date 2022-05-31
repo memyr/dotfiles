@@ -3,26 +3,26 @@ vim.g.maplocalleader = ""
 
 local status_ok, wk = pcall(require, "which-key")
 if status_ok then
-	wk.register({
-		b = { name = "﩯Buffers" },
-		c = { name = " Code" },
-		e = { name = "✎ Edit" },
-		f = { name = " Find" },
-		g = { name = " Git" },
-		h = { name = " Help" },
-		l = { name = " LSP" },
-		lc = { name = "code..." },
-		lg = { name = "goto..." },
-		lw = { name = "workspace folder..." },
-		lr = { name = "rename..." },
-		m = { name = "⫸ LocalLeader" },
-		o = { name = " Open" },
-		p = { name = " Packer" },
-		s = { name = " Snippets" },
-		r = { name = "Run" },
-		t = { name = " Toggle" },
-		w = { name = " Window" },
-	}, { prefix = "<leader>" })
+    wk.register({
+        b = { name = "﩯Buffers" },
+        c = { name = " Code" },
+        e = { name = "✎ Edit" },
+        f = { name = " Find" },
+        g = { name = " Git" },
+        h = { name = " Help" },
+        l = { name = " LSP" },
+        lc = { name = "code..." },
+        lg = { name = "goto..." },
+        lw = { name = "workspace folder..." },
+        lr = { name = "rename..." },
+        m = { name = "⫸ LocalLeader" },
+        o = { name = " Open" },
+        p = { name = " Packer" },
+        s = { name = " Snippets" },
+        r = { name = "Run" },
+        t = { name = " Toggle" },
+        w = { name = " Window" },
+    }, { prefix = "<leader>" })
 end
 
 -- Leader mappings

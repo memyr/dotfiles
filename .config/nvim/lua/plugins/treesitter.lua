@@ -3,37 +3,37 @@ local solarainbow = { "#859900", "#2aa198", "#268bd2", "#6c71c4", "#d33682", "#d
 require("orgmode").setup_ts_grammar()
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"html",
-		"python",
-		"lua",
-		"vim",
-		"bash",
-		"toml",
-		"regex",
-		"latex",
-		"comment",
-		"query",
-		"markdown",
-		"org",
-	},
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = { "org" },
-	},
-	autotag = { enable = true },
-	rainbow = {
-		enable = true,
-		extended_mode = true,
-		max_file_lines = nil,
-		colors = solarainbow,
-		termcolors = solarainbow,
-	},
-	textobjects = { select = { enable = true } },
+    ensure_installed = {
+        "html",
+        "python",
+        "lua",
+        "vim",
+        "bash",
+        "toml",
+        "regex",
+        "latex",
+        "comment",
+        "query",
+        "markdown",
+        "org",
+    },
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "org" },
+    },
+    autotag = { enable = true },
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = nil,
+        colors = solarainbow,
+        termcolors = solarainbow,
+    },
+    textobjects = { select = { enable = true } },
 })
 
 for i, c in ipairs(solarainbow) do
-	vim.api.nvim_set_hl(0, "rainbowcol" .. i, { fg = c })
+    vim.api.nvim_set_hl(0, "rainbowcol" .. i, { fg = c })
 end
 
 -- Don't use treesitter folding until the following are fixed:

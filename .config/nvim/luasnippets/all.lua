@@ -19,16 +19,16 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
 local snips = {
-	s("lorem", {
-		t({ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut mauris augue. Etiam laoreet tristique", "" }),
-		t({ "orci at laoreet. Morbi eget leo libero. Vestibulum feugiat hendrerit massa ut elementum. Aliquam suscipit", "" }),
-		t({ "fermentum ex. Aenean mi arcu, lacinia ornare diam eu, tempus elementum est. Morbi non leo eget arcu interdum", "" }),
-		t({ "tincidunt. Curabitur et dolor cursus, tincidunt massa sit amet, porttitor nisl. Vestibulum condimentum dolor", "" }),
-		t({ "et lectus lacinia cursus. Sed elementum, lacus sit amet suscipit tincidunt, eros elit tristique ante, ut", "" }),
-		t({ "hendrerit quam massa vel orci. Morbi in magna in massa vulputate pretium ut nec sapien. Integer blandit", "" }),
-		t({ "tortor elit, ac egestas quam eleifend a. Ut ultrices rutrum malesuada.", "" }),
-		i(1),
-	}),
+    s("lorem", {
+        t({ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut mauris augue. Etiam laoreet tristique", "" }),
+        t({ "orci at laoreet. Morbi eget leo libero. Vestibulum feugiat hendrerit massa ut elementum. Aliquam suscipit", "" }),
+        t({ "fermentum ex. Aenean mi arcu, lacinia ornare diam eu, tempus elementum est. Morbi non leo eget arcu interdum", "" }),
+        t({ "tincidunt. Curabitur et dolor cursus, tincidunt massa sit amet, porttitor nisl. Vestibulum condimentum dolor", "" }),
+        t({ "et lectus lacinia cursus. Sed elementum, lacus sit amet suscipit tincidunt, eros elit tristique ante, ut", "" }),
+        t({ "hendrerit quam massa vel orci. Morbi in magna in massa vulputate pretium ut nec sapien. Integer blandit", "" }),
+        t({ "tortor elit, ac egestas quam eleifend a. Ut ultrices rutrum malesuada.", "" }),
+        i(1),
+    }),
 }
 
 return snips
